@@ -1,0 +1,37 @@
+/*
+ * SerialResistorConnection.cpp
+ *
+ *  Created on: 04-Feb-2024
+ *      Author: giris
+ */
+
+#include "SerialResistorConnection.h"
+
+using namespace std;
+
+SerialResistorConnection::SerialResistorConnection(std::string name)
+: ResistorConnection(name)
+{
+}
+
+SerialResistorConnection::~SerialResistorConnection()
+{
+}
+
+char SerialResistorConnection::separator() const
+{
+	return '-';
+}
+
+float SerialResistorConnection::nominalValue() const
+{
+	return Resistor::nominalValue();
+}
+
+float SerialResistorConnection::minimumValue() const
+{
+}
+
+float SerialResistorConnection::maximumValue() const
+{
+}

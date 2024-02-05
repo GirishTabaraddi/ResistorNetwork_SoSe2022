@@ -1,0 +1,8 @@
+01:00:16 **** Incremental Build of configuration Debug for project ResistorNetwork ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\ResistorPart.o" "..\\myCode\\ResistorPart.cpp" 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\Resistor.o" "..\\myCode\\Resistor.cpp" 
+g++ -o ResistorNetwork.exe "myCode\\ParallelResistorConnection.o" "myCode\\Resistor.o" "myCode\\ResistorConnection.o" "myCode\\ResistorPart.o" "myCode\\ResistorReader.o" "myCode\\SerialResistorConnection.o" "myCode\\main.o" 
+
+01:00:18 Build Finished. 0 errors, 0 warnings. (took 1s.301ms)
+

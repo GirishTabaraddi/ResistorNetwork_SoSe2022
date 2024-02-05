@@ -1,0 +1,22 @@
+/*
+ * ResistorReader.h
+ *
+ *  Created on: 04-Feb-2024
+ *      Author: giris
+ */
+
+#ifndef RESISTORREADER_H_
+#define RESISTORREADER_H_
+
+#include "ResistorPart.h"
+#include "SerialResistorConnection.h"
+#include "ParallelResistorConnection.h"
+
+class ResistorReader
+{
+public:
+	ResistorReader();
+	virtual ~ResistorReader();
+};
+
+#endif /* RESISTORREADER_H_ */

@@ -1,0 +1,27 @@
+// Standard (system) header files
+#include <iostream>
+#include <cstdlib>
+// Add more standard header files as required
+
+
+using namespace std;
+
+// Add your project's header files here
+#include "ResistorPart.h"
+#include "SerialResistorConnection.h"
+#include "ParallelResistorConnection.h"
+
+// Main program
+int main ()
+{
+	cout << "ResistorNetwork started." << endl << endl;
+
+	ResistorPart obj1("R1", 42, 5);
+
+	cout << obj1 << endl;
+
+//	shared_ptr<Resistor> R1 = make_shared<Resistor>(ResistorPart("R1", 1000, 10));
+	shared_ptr<Resistor> R1 = shared_ptr<Resistor>(new ResistorPart("R1", 1000, 10));
+
+	return 0;
+}

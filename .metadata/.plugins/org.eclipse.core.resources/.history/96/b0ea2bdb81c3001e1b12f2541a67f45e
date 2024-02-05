@@ -1,0 +1,47 @@
+/*
+ * Resistor.cpp
+ *
+ *  Created on: 04-Feb-2024
+ *      Author: giris
+ */
+
+#include "Resistor.h"
+
+using namespace std;
+
+Resistor::Resistor(std::string name) : name(name)
+{
+}
+
+Resistor::~Resistor()
+{
+}
+
+std::string Resistor::getName() const
+{
+	return this->name;
+}
+
+float Resistor::nominalValue() const
+{
+	return 0.0;
+}
+
+float Resistor::minimumValue() const
+{
+	return 0.0;
+}
+
+float Resistor::maximumValue() const
+{
+	return 0.0;
+}
+
+std::string Resistor::toString() const
+{
+	ostringstream oss;
+
+	oss << this->getName() << "=" << this->nominalValue() << " Ohm";
+
+	return oss.str();
+}
