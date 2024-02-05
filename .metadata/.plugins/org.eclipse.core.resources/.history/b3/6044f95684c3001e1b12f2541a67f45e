@@ -1,0 +1,34 @@
+/*
+ * ResistorConnection.cpp
+ *
+ *  Created on: 04-Feb-2024
+ *      Author: giris
+ */
+
+#include "ResistorConnection.h"
+
+using namespace std;
+
+ResistorConnection::ResistorConnection(std::string name) : Resistor(name)
+{
+}
+
+ResistorConnection::~ResistorConnection()
+{
+}
+
+char ResistorConnection::separator() const
+{
+	return ',';
+}
+
+std::string ResistorConnection::getName() const
+{
+	return (Resistor::getName() + "[" + Resistor::getName() + "]" + this->separator()
+			+ "[" + Resistor::getName() + "]");
+}
+
+ResistorConnection& ResistorConnection::operator +=(
+		const std::shared_ptr<Resistor> &resistor)
+{
+}

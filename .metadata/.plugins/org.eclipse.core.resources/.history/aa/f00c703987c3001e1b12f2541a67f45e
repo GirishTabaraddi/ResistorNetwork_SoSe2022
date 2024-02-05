@@ -1,0 +1,24 @@
+/*
+ * ParallelResistoConnection.h
+ *
+ *  Created on: 04-Feb-2024
+ *      Author: giris
+ */
+
+#ifndef PARALLELRESISTORCONNECTION_H_
+#define PARALLELRESISTORCONNECTION_H_
+
+#include "ResistorConnection.h"
+
+class ParallelResistoConnection: public ResistorConnection
+{
+public:
+	ParallelResistoConnection(std::string name);
+	virtual ~ParallelResistoConnection();
+	char separator() const;
+	float nominalValue() const;
+	float minimumValue() const;
+	float maximumValue() const;
+};
+
+#endif /* PARALLELRESISTORCONNECTION_H_ */

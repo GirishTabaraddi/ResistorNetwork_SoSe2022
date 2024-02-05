@@ -1,0 +1,60 @@
+/*
+ * ParallelResistoConnection.cpp
+ *
+ *  Created on: 04-Feb-2024
+ *      Author: giris
+ */
+
+#include "ParallelResistorConnection.h"
+
+using namespace std;
+
+ParallelResistorConnection::ParallelResistorConnection(std::string name)
+: ResistorConnection(name)
+{
+}
+
+ParallelResistorConnection::~ParallelResistorConnection()
+{
+}
+
+char ParallelResistorConnection::separator() const
+{
+	return '|';
+}
+
+float ParallelResistorConnection::nominalValue() const
+{
+	float value = 0;
+
+	for(auto itr = this->resistors.begin(); itr != this->resistors.end(); itr++)
+	{
+		value = value + (*itr).get()->nominalValue();
+	}
+
+	return value;
+}
+
+float ParallelResistorConnection::minimumValue() const
+{
+	float value = 0;
+
+	for(auto itr = this->resistors.begin(); itr != this->resistors.end(); itr++)
+	{
+		value = value + Resistor::nominalValue();
+	}
+
+	return value;
+}
+
+float ParallelResistorConnection::maximumValue() const
+{
+	float value = 0;
+
+	for(auto itr = this->resistors.begin(); itr != this->resistors.end(); itr++)
+	{
+		value = value + Resistor::nominalValue();
+	}
+
+	return value;
+}

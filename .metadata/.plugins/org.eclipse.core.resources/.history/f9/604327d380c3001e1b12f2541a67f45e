@@ -1,0 +1,35 @@
+/*
+ * Resistor.h
+ *
+ *  Created on: 04-Feb-2024
+ *      Author: giris
+ */
+
+#ifndef RESISTOR_H_
+#define RESISTOR_H_
+
+
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <iomanip>
+#include <memory>
+
+class Resistor
+{
+private:
+	std::string name;
+
+public:
+	Resistor(std::string name);
+	virtual ~Resistor();
+	std::string getName() const;
+	float nominalValue() const;
+	float minimumValue() const;
+	float maximumValue() const;
+	std::string toString() const;
+};
+
+typedef std::shared_ptr<Resistor> ResistorPtr;
+
+#endif /* RESISTOR_H_ */

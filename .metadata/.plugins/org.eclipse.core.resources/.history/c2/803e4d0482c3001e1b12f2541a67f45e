@@ -1,0 +1,18 @@
+// Standard (system) header files
+#include <iostream>
+#include <cstdlib>
+// Add more standard header files as required
+
+
+using namespace std;
+
+// Add your project's header files here
+
+
+// Main program
+int main ()
+{
+	cout << "ResistorNetwork started." << endl << endl;
+
+	return 0;
+}
