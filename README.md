@@ -1,4 +1,6 @@
-# ResistorNetwork_SoSe2022
+# ResistorNetwork_SoSe2022  
+
+![ResistorNetwork_UML](https://github.com/GirishTabaraddi/ResistorNetwork_SoSe2022/blob/feature/add-repo/ResistorNetwork_UML.png)  
 
 Topic of this exam is the modelling of resistor networks (see picture below). The general interface to any resistor network is specified by class Resistor. An instance may simply be a physical resistor (class ResistorPart). Another possibility is to have a connection of two or more resistors, either a serial connection or a parallel connection.  
 
@@ -55,15 +57,15 @@ The format used is CSV with a semicolon as separator. The following fields are u
 	R5[R6|R7];824.561;0.1
 
 [5 Points]  
-1. Add method “void write(ostream& out)” (dynamic polymorphism) to the class Resistor. The value for tolerance is calculated from the results of invoking nominal-, minimal- and maximumValue (how to do this should be obvious, considering the implementations of these methods in ResistorPart).  
-
+1. Add method “void write(ostream& out)” (dynamic polymorphism) to the class Resistor. The value for tolerance is calculated from the results of invoking nominal-, minimal- and maximumValue (how to do this should be obvious, considering the implementations of these methods in ResistorPart).
+   
 [3 Points]  
 2. Redefine method “void write(ostream& out)” in class ResistorConnection. This implementation first invokes write for each connected resistor and then the write method of the base class. This sequence ensures that all resistors appear in the output before being referenced by another resistor (of type ResistorConnection).  
 
 [2 Points]  
 3. Test your implementation by writing R2 and R5 from the previous exercise to a file “data.txt”.  
 
-[0 Points]
+[0 Points]  
 4. Reading resistor networks is a bit more difficult. After reading a line, you look at the first field (name). If the name does not contain a square bracket, it’s a ResistorPart and you use the remaining data to create it. Else, it’s a ResistorConnection and you ignore the remaining fields. You can deduce from the name (have a look at the separator) if it is a serial connection or a parallel connection and which resistors are connected. But how can you add the referenced resistors to the connection? Well, due to our writing strategy, the connected resistors always appear in the input before a connection that references them. So the reading strategy is to put newly created resistors in a map (by name). When they are later referenced by a connection, they are added to the connection and removed from the map. At the end, the map only contains the “top level” resistor networks.  
 
 [8 Points]  
